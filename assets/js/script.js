@@ -185,6 +185,16 @@ function displayHistory() {
     let historyButton = $("<button class='historyButton'>"); //creates button for history section with class historyButton
     historyButton.text(history[i]); //sets button text to history array at index i (uses currently used city from local storage to set text of button)
     $("#history").append(historyButton); //appends button to history section in html through ID
+
+    if (history.length > 0) {
+      //if history length is greater than 0
+      city = history[0]; //sets city to last city in history
+      // haven't figured out how to get last city from button click to rejigg array, so newer button clicks make newest item in array
+
+      getWeather(); //gets weather
+      getForecast(); //gets forecast
+
+    }
   }
 }
 
@@ -202,7 +212,12 @@ $("#search-button").on("click", function (event) {
   let history = JSON.parse(localStorage.getItem("cities")) || []; //sets history to local storage or an empty array if not present. uses parse to convert to array or an empty array
   if (!history.includes(city)) {
     //if city not in history
-    history.push(city); //adds city to history, menaing already submitted don't make more buttons or save to local twice
+    history.unshift(city); //adds city to history, menaing already submitted don't make more buttons or save to local twice
+    const maxHistory = 5; //sets max history to 5
+    if (history.length > maxHistory) {
+      //if history length is greater than max history
+      history.pop(); //removes last city in history
+    }
     localStorage.setItem("cities", JSON.stringify(history)); //sets history to local storage with stringify to convert to string
   }
 
