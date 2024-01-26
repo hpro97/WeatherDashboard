@@ -24,10 +24,10 @@
     //display wind speed ✅
 
 //display 5 day forecast
-    //display date and time
-    //display weather icon based on weather description
-    //display temperature
-    //display humidity
+    //display date and time ✅
+    //display weather icon based on weather description ✅
+    //display temperature ✅
+    //display humidity ✅
 
 
 //plan of attack:
@@ -112,6 +112,8 @@ function displayCurrentWeather(data) {
     //declare todayWeather using let
     let todayWeather = $("<div id='todayWeather'>");
     
+    todayWeather.append("<h2 id='city'>" + city + "</h2>");
+    todayWeather.append("<div id='date'>" + currentDay.format("dddd, MMMM D, YYYY") + "</div>");
     todayWeather.append("<div id='icon'><img src=" + iconURL + "></div>")
     todayWeather.append("<div id='temp'>Temperature: " + tempC + "°C</div>")
     todayWeather.append("<div id='humidity'>Humidity: " + humidity + "%</div>")
@@ -143,6 +145,25 @@ function displayForecast(data) {
     console.log(data);
     
     $("#forecast").empty();
+    let forecast = $("<div id='forecast'>");
+
+    for (let i = 7; i <= 39; i += 8) {
+        let date = data.list[i].dt_txt;
+        let icon = data.list[i].weather[0].icon;
+        let iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+        let temp = (data.list[i].main.temp - 273.15).toFixed(2);
+        let humidity = data.list[i].main.humidity;
+    
+        let forecastDay = $("<div class='forecastDay'>");
+        forecastDay.append(`<div class='date'>${date}</div>`);
+        forecastDay.append(`<div class='icon'><img src=${iconURL}></div>`);
+        forecastDay.append(`<div class='temp'>Temperature: ${temp}°C</div>`);
+        forecastDay.append(`<div class='humidity'>Humidity: ${humidity}%</div>`);
+    
+        forecast.append(forecastDay);
+    }
+    
+    $("#forecast").append(forecast);
 
 //arry[0] is now, and array[7] is 24 h in future
 
