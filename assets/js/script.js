@@ -207,7 +207,7 @@ $("#search-button").on("click", function (event) {
 
 $("#history").on("click", ".historyButton", function (event) {
     event.preventDefault();
-    city = $(event.target).val();
+    city = $(event.target).text();
     getWeather();
     getForecast();
 });
