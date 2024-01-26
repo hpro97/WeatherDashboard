@@ -87,23 +87,22 @@ function getWeather(){
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
+    // console.log(data);
     displayCurrentWeather(data);
     
   });
 }
 
 function displayCurrentWeather(data) {
-    console.log(data);
+    // console.log(data);
 
     $("#today").empty();
-    $("#forecast").empty();
 
     //accessing the icon property from obj
     let icon = data.weather[0].icon;
     let iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
-    console.log("Icon URL:", iconURL);
+    // console.log("Icon URL:", iconURL);
     
     let temp = data.main.temp;
     let humidity = data.main.humidity;
@@ -122,6 +121,34 @@ function displayCurrentWeather(data) {
     $("#today").append(todayWeather);
 }
 
+function getForecast(){
+
+    forecastQueryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`
+
+    fetch(forecastQueryURL)
+
+  .then(function (response) {
+    return response.json();
+  })
+
+  .then(function (data) {
+    // console.log(data);
+    displayForecast(data);
+    
+  });
+}
+
+function displayForecast(data) {
+
+    console.log(data);
+    
+    $("#forecast").empty();
+
+//arry[0] is now, and array[7] is 24 h in future
+
+
+}
+
 
 // ---------------------------------//
 // ---------------------------------//
@@ -135,6 +162,7 @@ $("#search-button").on("click", function (event) {
     city = $("#search-input").val();
     localStorage.setItem("city", city);
     getWeather();
+    getForecast();
 });
 
 // ---------------------------------//
