@@ -1,6 +1,10 @@
+// for commits
+// git add . && git commit -m "MESSAGE" && git push
+
 // ---------------------------------//
 // functionality of app:
 // ---------------------------------//
+
 //functionality requirements:
 
 //use local storage to store persistent data
