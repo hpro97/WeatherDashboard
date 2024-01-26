@@ -5,9 +5,9 @@
 
 //use local storage to store persistent data
 
-//use 5 day weather forecast api
+//use 5 day weather forecast api ✅
 
-//search via city name
+//search via city name ✅
 
 //display search history
     //when clicked on, access local storage and make current weather api call
@@ -164,12 +164,8 @@ function displayForecast(data) {
     }
     
     $("#forecast").append(forecast);
-
 //arry[0] is now, and array[7] is 24 h in future
-
-
 }
-
 
 // ---------------------------------//
 // ---------------------------------//
