@@ -47,6 +47,7 @@ let dateEl = $("#date");
 let timeEl = $("#time");
 let todayEl = $("#today");
 let forecastEl = $("#forecast");
+let historyEl = $("#history");
 
 // ---------------------------------//
 // ---------------------------------//
@@ -171,6 +172,17 @@ function displayForecast(data) {
 //arry[0] is now, and array[7] is 24 h in future
 }
 
+function displayHistory() {
+    let history = JSON.parse(localStorage.getItem("cities")) || [];
+    $("#history").empty();
+
+    for (let i = 0; i < history.length; i++) {
+      let historyButton = $("<button class='historyButton'>");
+      historyButton.text(history[i]);
+      $("#history").append(historyButton);
+  }
+}
+
 // ---------------------------------//
 // ---------------------------------//
 
@@ -181,7 +193,21 @@ function displayForecast(data) {
 $("#search-button").on("click", function (event) {
     event.preventDefault();
     city = $("#search-input").val();
-    localStorage.setItem("city", city);
+    let history = JSON.parse(localStorage.getItem("cities")) || [];
+    if (!history.includes(city)) {
+      history.push(city);
+      localStorage.setItem("cities", JSON.stringify(history));
+  }
+
+    displayHistory();
+
+    getWeather();
+    getForecast();
+});
+
+$("#history").on("click", ".historyButton", function (event) {
+    event.preventDefault();
+    city = $(event.target).val();
     getWeather();
     getForecast();
 });
@@ -190,3 +216,4 @@ $("#search-button").on("click", function (event) {
 // ---------------------------------//
 
 setDateAndTime();
+displayHistory();
