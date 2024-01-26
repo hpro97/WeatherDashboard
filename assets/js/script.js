@@ -115,31 +115,31 @@ function displayCurrentWeather(data) {
   //declare todayWeather using let
   let todayWeather = $("<div id='todayWeather'>"); //creates div
 
-  todayWeather.append("<h2 id='city'>" + city + "</h2>"); //appends
+  todayWeather.append("<h2 id='city'>" + city + "</h2>"); //appends h2 with id of city adding city variable from search as text between
   todayWeather.append(
     "<div id='date'>" + currentDay.format("dddd, MMMM D, YYYY") + "</div>"
-  ); //appends
-  todayWeather.append("<div id='icon'><img src=" + iconURL + "></div>"); //appends
-  todayWeather.append("<div id='temp'>Temperature: " + tempC + "°C</div>"); //appends
-  todayWeather.append("<div id='humidity'>Humidity: " + humidity + "%</div>"); //appends
-  todayWeather.append("<div id='wind'>Wind Speed: " + wind + "MPH</div>"); //appends
+  ); //appends div with id of date adding currentDay variable as text between formatting as above
+  todayWeather.append("<div id='icon'><img src=" + iconURL + "></div>"); //appends div with id of icon adding iconURL variable link showing icon (still bug with wind icon)
+  todayWeather.append("<div id='temp'>Temperature: " + tempC + "°C</div>"); //appends div with id of temp adding tempC variable as text conversion from kelvin and rounding to 2 decimal
+  todayWeather.append("<div id='humidity'>Humidity: " + humidity + "%</div>"); //appends div with id of humidity adding humidity variable as text
+  todayWeather.append("<div id='wind'>Wind Speed: " + wind + "MPH</div>"); //appends div with id of wind adding wind variable as text
 
-  // Append todayWeather to the element with id 'today'
+  // Append todayWeather to the element with id 'today' in html
   $("#today").append(todayWeather);
 }
 
 function getForecast() {
   //gets forecast
-  forecastQueryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`; //url
+  forecastQueryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`; //url with tmeplate literal
 
-  fetch(forecastQueryURL) //fetch
+  fetch(forecastQueryURL) //fetch url
     .then(function (response) {
-      //returns response
-      return response.json(); //returns json data
+      //returns response from fetch
+      return response.json(); //returns json data from fetch
     })
 
     .then(function (data) {
-      //data is json
+      //data is json data from fetch
       // console.log(data);
       displayForecast(data); //calls function
     });
@@ -149,18 +149,19 @@ function displayForecast(data) {
   //displays forecast
   console.log(data);
 
-  $("#forecast").empty(); //empties
-  let forecast = $("<div id='forecast'>"); //creates div for forecast
+  $("#forecast").empty(); //empties div with id of forecast in html
+  let forecast = $("<div id='forecast'>"); //creates div for forecast in html with id of forecast
 
   for (let i = 7; i <= 39; i += 8) {
-    //loops through data obj
+    //loops through data obj from 7 to 39 in increments of 8
+    //arry[0] is now, and array[7] is 24 h in future, add 8 each time to get next day doing total of 5 times reaching 39
     let date = data.list[i].dt_txt; //sets date through data obj using i index in data obj refering to current
     let icon = data.list[i].weather[0].icon; //sets icon through data obj using i index in data obj refering to current
-    let iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`; //sets url for icon referencin obj all links same structure with changed value for icon
+    let iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`; //sets url for icon referencin obj all links same structure with changed value for icon (wind icon not working, remmeber to debug if time and find why)
     let temp = (data.list[i].main.temp - 273.15).toFixed(2); //sets temp through data obj using i index in data obj refering to current - 273.15 from kelvin to celcius and rounds to 2 decimal
     let humidity = data.list[i].main.humidity; //sets humidity through data obj using i index in data obj refering to current
 
-    let forecastDay = $("<div class='forecastDay'>"); //creates div for forecast day
+    let forecastDay = $("<div class='forecastDay'>"); //creates div for forecast day in html with class of forecastDay
     forecastDay.append(`<div class='date'>${date}</div>`); //appends date to div forecastDay and displays previous let where needed
     forecastDay.append(`<div class='icon'><img src=${iconURL}></div>`); //appends icon to div forecastDay and displays previous let where needed
     forecastDay.append(`<div class='temp'>Temperature: ${temp}°C</div>`); //appends temp to div forecastDay and displays previous let where needed
@@ -171,16 +172,16 @@ function displayForecast(data) {
 
   $("#forecast").append(forecast); //appends forecast to forecast ID section in html
 
-  //arry[0] is now, and array[7] is 24 h in future
+  
 }
 
 function displayHistory() {
   //displays history function
   let history = JSON.parse(localStorage.getItem("cities")) || []; //sets history to local storage or an empty array if not present. uses parse to convert to array or an empty array
-  $("#history").empty(); //empties the history section
+  $("#history").empty(); //empties the history section in html with id of history
 
   for (let i = 0; i < history.length; i++) {
-    //loops through history
+    //loops through history array at index i (0 to length of history array) in increments of 1
     let historyButton = $("<button class='historyButton'>"); //creates button for history section with class historyButton
     historyButton.text(history[i]); //sets button text to history array at index i (uses currently used city from local storage to set text of button)
     $("#history").append(historyButton); //appends button to history section in html through ID
@@ -202,7 +203,7 @@ $("#search-button").on("click", function (event) {
   if (!history.includes(city)) {
     //if city not in history
     history.push(city); //adds city to history, menaing already submitted don't make more buttons or save to local twice
-    localStorage.setItem("cities", JSON.stringify(history)); //sets history to local storage
+    localStorage.setItem("cities", JSON.stringify(history)); //sets history to local storage with stringify to convert to string
   }
 
   displayHistory(); //displays history
@@ -212,11 +213,11 @@ $("#search-button").on("click", function (event) {
 });
 
 $("#history").on("click", ".historyButton", function (event) {
-  //history button on click event with class historyButton, menaing only activates if target has class of historyButton
+  //history button on click event with class historyButton, meaning only activates if target has class of historyButton
   event.preventDefault(); //prevents default from submitting data refreshing page
   city = $(event.target).text(); //sets city to button text
-  getWeather(); //gets weather
-  getForecast(); //gets forecast
+  getWeather(); //gets weather with current city defined above
+  getForecast(); //gets forecast with current city defined above
 });
 
 // ---------------------------------//
