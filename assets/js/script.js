@@ -212,7 +212,9 @@ $("#search-button").on("click", function (event) {
   //search button on click event
   event.preventDefault(); //prevents default from submitting data refreshing page
   city = $("#search-input").val(); //sets city to search input value
-  let history = JSON.parse(localStorage.getItem("cities")) || []; //sets history to local storage or an empty array if not present. uses parse to convert to array or an empty array
+  if (city.trim() !== "") { // prevents button being created with empty value, checks if after removing whitespace, value is not empty, != means not equal to empty, so code changing the array will not happen if empty
+  
+    let history = JSON.parse(localStorage.getItem("cities")) || []; //sets history to local storage or an empty array if not present. uses parse to convert to array or an empty array
   if (!history.includes(city)) {
     //if city not in history
     history.unshift(city); //adds city to history, menaing already submitted don't make more buttons or save to local twice
@@ -228,6 +230,7 @@ $("#search-button").on("click", function (event) {
 
   getWeather(); //gets weather
   getForecast(); //gets forecast
+}
 });
 
 $("#history").on("click", ".historyButton", function (event) {
