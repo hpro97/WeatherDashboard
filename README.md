@@ -1,10 +1,10 @@
-# Challenge 7 Personal Planner - Harry Probert
+# Challenge 8 Weather Dashboard - Harry Probert
 
-A basic personal planner for business hours.
+A basic weather dashboard.
 
 ## Description
 
-I built this project to implement new technologies I've learned, such as using libraries like jQuery UI, jQuery, jsDate, and to refresh my memory on Bootstrap and HTML creation, among other things. The personal planner allows you to organize your day by displaying the current date and using color coordination to indicate whether a time block is in the past, present, or future. It also enables you to keep a local history so that it persists upon refresh throughout the day. I ensured full functionality after completing each requisite provided to me, debugging as necessary and adding comments for readability and clarification of how my code works. I condensed my code by assigning functions and calling them as necessary.
+I built this project to implement all i've learned until now including advanced use of APIs. The weather dashboard allows you to search a city and displays the current weather alongside a next 5 day forecast, any searched cities are saved up until a number of 5, then they stat to be replaced, so instead of typing a city you are able to click a button for ease of use. I ensured full functionality after completing each requisite provided to me, debugging as necessary and adding comments for readability and clarification of how my code works. I condensed my code by assigning functions and calling them as necessary. I also added custom CSS to make the application appear more similar to to the design provided, and provide a sleaker and mnore user friendly look.
 
 ## Table of Contents
 
@@ -15,13 +15,13 @@ I built this project to implement new technologies I've learned, such as using l
 
 ## Links
 
-* **Deployed:** [Personal Planner](https://hpro97.github.io/personalPlannerChallenge7HarryProbert/)
-* **GitHub Repo:** [Challenge 7 Personal Planner](https://github.com/hpro97/personalPlannerChallenge7HarryProbert)
-* **JavaScript File:** [assets/js](https://github.com/hpro97/personalPlannerChallenge7HarryProbert/tree/main/assets/js)
+* **Deployed:** [Weather Dashboard](https://hpro97.github.io/challenge8WeatherDashboardHarryProbert/)
+* **GitHub Repo:** [Challenge 8 Weather Dashboard](https://github.com/hpro97/challenge8WeatherDashboardHarryProbert)
+* **JavaScript File:** [assets/js/script.js](https://github.com/hpro97/challenge8WeatherDashboardHarryProbert/blob/main/assets/js/script.js)
 
 ## Screenshot
 
-![Screenshot of Deployed Page](/assets/images/screenshot.png)
+![Screenshot of Deployed Page](/assets/screenshot.png)
 
 ## Credits
 
@@ -29,8 +29,8 @@ I would like to acknowledge the following resources:
 
 * **Stack Overflow:** Reference to similar projects, problem-solving, and clarification on coding questions.
 * **EdX Bootcamp AI:** Clarification on certain JavaScript elements, reference for creating working functions, examples of similar code structures, and help with debugging.
-* **W3Schools:** Clarification on JavaScript functions, local storage examples, and code syntax structure.
-* **DayJs:** Documentation on usage.
+* **W3Schools:** Clarification on JavaScript functions, local storage examples, CSS, bootstrap and code syntax structure.
+* **Open weather map** Documentation on usage.
 * **Bootstrap:** Documentation on example forms and clarification.
 * **jQuery:** Clarification on correct usage and guidance on architectural aspects to facilitate my code.
 
