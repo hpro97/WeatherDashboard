@@ -246,3 +246,11 @@ $("#history").on("click", ".historyButton", function (event) {
 
 setDateAndTime(); //sets date and time
 displayHistory(); //displays history
+
+//* notes to self for future functionality to code: 
+
+// if button exists, can't search term and display inof. has to click button
+
+// doesn't display last used city upon reload
+
+//*
