@@ -32,65 +32,67 @@ forecast id bottom right side of page (right from aside, underneath today weathe
 
     each element inside forecast day class divs, i want to have block display */
 
-    #search-input {
-        width: 100%;
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 1rem;
-      }
+#search-input {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
 
-    .btn {
-        width: 100%;
-        background-color: #f8f9fa;
-    }
+.btn {
+    width: 100%;
+    background-color: #f8f9fa;
+}
 
-    .input-group {
-        display: block;
-        padding: 0.5rem;
-        margin: 1rem;
-        width: 100%;
-      }
+.input-group {
+    display: block;
+    padding: 0.5rem;
+    margin: 1rem;
+    width: 100%;
+}
 
-    #history {
-        border: 0.2rem solid black;
-        padding: 0.5rem;
-        margin: 1rem;
-        
-      }
+#history {
+    border: 0.2rem solid black;
+    padding: 0.5rem;
+    margin: 1rem;
 
-    .historyButton {
-        display: block;
-        border: 0.2rem solid black;
-        padding: 0.5rem;
-        margin: 1rem;
-        
-      }
+}
 
-    .container-fluid {
-        padding: 1rem; /* Adjust the padding value as needed */
-      }
+.historyButton {
+    display: block;
+    border: 0.2rem solid black;
+    padding: 0.5rem;
+    margin: 1rem;
 
-    #todayWeather {
-        border: 0.2rem solid black;
-        padding: 0.5rem;
-      }
+}
 
-    #forecast {
-        border: 0.2rem solid black;
-        padding: 0.5rem;
-      }
+.container-fluid {
+    padding: 1rem;
+}
 
-    #forecastInside {
-        display: inline-block;
-        flex-wrap: nowrap; /* Ensure items stay in a single row */
-        padding: 0.5rem;
-        border: 0.2rem;
-      }
-      
-      .forecastDay {
-        flex: 0 0 auto; /* Don't allow flex items to grow or shrink */
-        margin-right: 10px; /* Adjust margin as needed for spacing between items */
-        border: 0.15rem solid black;
-        padding: 0.4rem;
-        display: inline-block;
-      }
+#todayWeather {
+    border: 0.2rem solid black;
+    padding: 0.5rem;
+}
+
+#forecast {
+    border: 0.2rem solid black;
+    padding: 0.5rem;
+}
+
+#forecastInside {
+    display: inline-block;
+    flex-wrap: nowrap;
+    /* Ensure items stay in a single row */
+    padding: 0.5rem;
+    border: 0.2rem;
+}
+
+.forecastDay {
+    flex: 0 0 auto;
+    /* Don't allow flex items to grow or shrink */
+    margin-right: 10px;
+    border: 0.15rem solid black;
+    padding: 0.4rem;
+    display: inline-block;
+}
