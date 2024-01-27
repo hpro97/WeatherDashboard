@@ -1,0 +1,29 @@
+/* git add . && git commit -m "MESSAGE" && git push
+
+to do:
+
+aside class col-lg-4 pb-3 just left side of page all
+
+    form heading top of aside
+
+    form inuput span all of aside
+
+    input group append class underneath search span all aside
+
+    history buttons class under searhc button
+
+todayweather id top right side of page (right from aside, on top of forecast id)
+
+    city id, date id, weather icon id on top left of today weather id
+
+    temperature id underneath city id
+
+    humidity id underneath temperature
+
+    wind speed id underneath humidity
+
+forecast id bottom right side of page (right from aside, underneath today weather)
+
+    target all forecast day class divs so that they dispaly inline from eachother
+
+    each element inside forecast day class divs block display */
