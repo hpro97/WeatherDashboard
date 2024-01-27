@@ -36,10 +36,12 @@ forecast id bottom right side of page (right from aside, underneath today weathe
         width: 100%;
         text-align: center;
         font-weight: bold;
+        margin-bottom: 1rem;
       }
 
     .btn {
         width: 100%;
+        background-color: #f8f9fa;
     }
 
     .input-group {
@@ -79,10 +81,10 @@ forecast id bottom right side of page (right from aside, underneath today weathe
       }
 
     #forecastInside {
-        display: flex;
+        display: inline-block;
         flex-wrap: nowrap; /* Ensure items stay in a single row */
-        overflow-x: auto; /* Enable horizontal scrolling if necessary */
         padding: 0.5rem;
+        border: 0.2rem;
       }
       
       .forecastDay {
