@@ -1,0 +1,120 @@
+    /* Header Section:
+
+    Class: .container-fluid.text-center.text-white.bg-dark.p-2.weather-header
+    Heading 1: h1 - Weather Dashboard
+    Heading 2 (Today): h2 - Today is:
+    Heading 5 (Date): h5 - id: date
+    Heading 6 (Time): h6 - id: time
+    Search Section (Left Side):
+    
+    Class: .col-lg-4.pb-3 (Column with Bootstrap classes)
+    Heading 2: h2 - id: form-heading
+    Form: form - id: search-form
+    Input Field: input - id: search-input
+    Button: button - id: search-button
+    History List: div - id: history
+    Main Content Section (Right Side):
+    
+    Class: .col-lg-8.pb-3 (Column with Bootstrap classes)
+    Today Section: section - id: today
+    Forecast Section: section - id: forecast
+    Forecast Header (5 Day): h5 - id: header5Day
+    Forecast Inside Container: div - id: forecastInside
+    Forecast Day Container: div - class: forecastDay
+    Date: div - class: date
+    Icon: div - class: icon
+    Temperature: div - class: temp
+    Humidity: div - class: humidity */
+
+/* AI USED TO GENERATE STRUCURE FOR ALL OF MY CLASS AND ID SELECTORS IN ORDER TO ADD READABILITY:*/
+
+    /* Header Section */
+    .container-fluid.text-center.text-white.bg-dark.p-2.weather-header {
+        /* Your styles for the header section */
+      }
+      
+      .container-fluid.text-center.text-white.bg-dark.p-2.weather-header h1 {
+        /* Styles for H1 within the header section */
+      }
+      
+      .container-fluid.text-center.text-white.bg-dark.p-2.weather-header h2 {
+        /* Styles for H2 within the header section */
+      }
+      
+      .container-fluid.text-center.text-white.bg-dark.p-2.weather-header h5#date {
+        /* Styles for H5 with id 'date' within the header section */
+      }
+      
+      .container-fluid.text-center.text-white.bg-dark.p-2.weather-header h6#time {
+        /* Styles for H6 with id 'time' within the header section */
+      }
+      
+      /* Search Section (Left Side) */
+      .col-lg-4.pb-3 {
+        /* Styles for the left-side column */
+      }
+      
+      .col-lg-4.pb-3 h2#form-heading {
+        /* Styles for H2 with id 'form-heading' within the left-side column */
+      }
+      
+      .col-lg-4.pb-3 form#search-form {
+        /* Styles for the form with id 'search-form' within the left-side column */
+      }
+      
+      .col-lg-4.pb-3 input#search-input {
+        /* Styles for the input with id 'search-input' within the left-side column */
+      }
+      
+      .col-lg-4.pb-3 button#search-button {
+        /* Styles for the button with id 'search-button' within the left-side column */
+      }
+      
+      .col-lg-4.pb-3 div#history {
+        /* Styles for the div with id 'history' within the left-side column */
+      }
+      
+      /* Main Content Section (Right Side) */
+      .col-lg-8.pb-3 {
+        /* Styles for the right-side column */
+      }
+      
+      .col-lg-8.pb-3 section#today {
+        /* Styles for the section with id 'today' within the right-side column */
+      }
+      
+      .col-lg-8.pb-3 section#forecast {
+        /* Styles for the section with id 'forecast' within the right-side column */
+      }
+      
+      .col-lg-8.pb-3 h5#header5Day {
+        /* Styles for H5 with id 'header5Day' within the right-side column */
+      }
+      
+      .col-lg-8.pb-3 div#forecastInside {
+        /* Styles for the div with id 'forecastInside' within the right-side column */
+        display: inline;
+      }
+      
+      .col-lg-8.pb-3 div.forecastDay {
+        /* Styles for div elements with class 'forecastDay' within the right-side column */
+        margin-bottom: 1 rem;
+        
+      }
+      
+      .col-lg-8.pb-3 div.forecastDay div.date {
+        /* Styles for div elements with class 'date' within the right-side column */
+      }
+      
+      .col-lg-8.pb-3 div.forecastDay div.icon {
+        /* Styles for div elements with class 'icon' within the right-side column */
+      }
+      
+      .col-lg-8.pb-3 div.forecastDay div.temp {
+        /* Styles for div elements with class 'temp' within the right-side column */
+      }
+      
+      .col-lg-8.pb-3 div.forecastDay div.humidity {
+        /* Styles for div elements with class 'humidity' within the right-side column */
+      }
+    

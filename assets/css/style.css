@@ -31,3 +31,64 @@ forecast id bottom right side of page (right from aside, underneath today weathe
     target all forecastInside id, inner divs (class of forecastDay) so that they dispaly inline from eachother
 
     each element inside forecast day class divs, i want to have block display */
+
+    #search-input {
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+      }
+
+    .btn {
+        width: 100%;
+    }
+
+    .input-group {
+        display: block;
+        padding: 0.5rem;
+        margin: 1rem;
+        width: 100%;
+      }
+
+    #history {
+        border: 0.2rem solid black;
+        padding: 0.5rem;
+        margin: 1rem;
+        
+      }
+
+    .historyButton {
+        display: block;
+        border: 0.2rem solid black;
+        padding: 0.5rem;
+        margin: 1rem;
+        
+      }
+
+    .container-fluid {
+        padding: 1rem; /* Adjust the padding value as needed */
+      }
+
+    #todayWeather {
+        border: 0.2rem solid black;
+        padding: 0.5rem;
+      }
+
+    #forecast {
+        border: 0.2rem solid black;
+        padding: 0.5rem;
+      }
+
+    #forecastInside {
+        display: flex;
+        flex-wrap: nowrap; /* Ensure items stay in a single row */
+        overflow-x: auto; /* Enable horizontal scrolling if necessary */
+        padding: 0.5rem;
+      }
+      
+      .forecastDay {
+        flex: 0 0 auto; /* Don't allow flex items to grow or shrink */
+        margin-right: 10px; /* Adjust margin as needed for spacing between items */
+        border: 0.15rem solid black;
+        padding: 0.4rem;
+        display: inline-block;
+      }
