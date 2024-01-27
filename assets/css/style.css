@@ -2,15 +2,17 @@
 
 to do:
 
-aside class col-lg-4 pb-3 just left side of page all
+aside class col-lg-4 pb-3 ouppying onlt left side of page
 
-    form heading top of aside
+    form heading i want to be the top element of aside, spanning all the width of aside
 
-    form inuput span all of aside
+    form input span all of aside underneath form heading
 
-    input group append class underneath search span all aside
+    (input group append) class, i want to be underneath from input, i want it to span all the width of the aside
 
-    history buttons class under searhc button
+    div with id of history underneath the form input group
+    
+    i want all the buttons class displayed block underneath eachoter, with all of the buttons beneath the input group append inside of the history div
 
 todayweather id top right side of page (right from aside, on top of forecast id)
 
