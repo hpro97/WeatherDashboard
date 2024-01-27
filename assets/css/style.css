@@ -14,18 +14,20 @@ aside class col-lg-4 pb-3 ouppying onlt left side of page
     
     i want all the buttons class displayed block underneath eachoter, with all of the buttons beneath the input group append inside of the history div
 
-todayweather id top right side of page (right from aside, on top of forecast id)
+todayweather section accesed trhough id. i want to be on the top right side of page (right from aside, on top of forecast id)
 
-    city id, date id, weather icon id on top left of today weather id
+    city id, date id, weather icon id on top left of today weather id all inline
 
-    temperature id underneath city id
+    temperature id underneath city id (block)
 
-    humidity id underneath temperature
+    humidity id underneath temperature (block)
 
-    wind speed id underneath humidity
+    wind speed id underneath humidity (block)
 
 forecast id bottom right side of page (right from aside, underneath today weather)
 
-    target all forecast day class divs so that they dispaly inline from eachother
+    target header5Day id to display 5 day forecast: on top of forecast id div group
 
-    each element inside forecast day class divs block display */
+    target all forecastInside id, inner divs (class of forecastDay) so that they dispaly inline from eachother
+
+    each element inside forecast day class divs, i want to have block display */

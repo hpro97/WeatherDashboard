@@ -150,7 +150,10 @@ function displayForecast(data) {
   console.log(data);
 
   $("#forecast").empty(); //empties div with id of forecast in html
-  let forecast = $("<div id='forecast'>"); //creates div for forecast in html with id of forecast
+  let header5Day = $("<h5 id='header5Day'>5 Day Forecast: </h5>"); //creates h5
+  $("#forecast").append(header5Day); //appends h5
+
+  let forecast = $("<div id='forecastInside'>"); //creates div for forecast in html with id of forecast
 
   for (let i = 7; i <= 39; i += 8) {
     //loops through data obj from 7 to 39 in increments of 8
