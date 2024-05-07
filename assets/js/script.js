@@ -183,6 +183,16 @@ function displayHistory() {
   let history = JSON.parse(localStorage.getItem("cities")) || []; //sets history to local storage or an empty array if not present. uses parse to convert to array or an empty array
   $("#history").empty(); //empties the history section in html with id of history
 
+  //css mods for solid outline of div to not display if empty
+  if(history.length === 0){
+    historyEl.css("border", "none");
+    forecastEl.css("border", "none");
+  } else {
+    historyEl.css("border", "solid");
+    forecastEl.css("border", "solid");
+  }
+
+
   for (let i = 0; i < history.length; i++) {
     //loops through history array at index i (0 to length of history array) in increments of 1
     let historyButton = $("<button class='historyButton'>"); //creates button for history section with class historyButton
